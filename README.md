@@ -14,7 +14,7 @@ git config --global user.email "your_email_address@example.com"
 
 ## Osnove gita
 
-Git je moguće rabiti odmah nakon instalacije, a jednostavne upute moguće je pronaći (s obzirom da će se kasnije rabiti Gitlab) na [Git basics](https://docs.gitlab.com/ee/gitlab-basics/). Osim ovoga, dobar resurs predstavlja i knjiga [Pro git](https://git-scm.com/book/en/v2).
+Git je moguće rabiti odmah nakon instalacije, a jednostavne upute moguće je pronaći (s obzirom da će se kasnije rabiti Github) na [Git basics](https://www.freecodecamp.org/news/learn-the-basics-of-git-in-under-10-minutes-da548267cc91/). Osim ovoga, dobar resurs predstavlja i knjiga [Pro git](https://git-scm.com/book/en/v2). Video vodič kolege Leventića dostupan je na [Git video vodič](https://www.youtube.com/watch?v=a0fgOeEpE74&list=PLDKea8VEeLQNtn__lG_TDqwhlGhoutWym).
 
 Kako biste testirali instalaciju i upoznali se s gitom, kreirajte prazan direktorij naziva "Projekt", u njemu korištenjem 
 ```
@@ -54,18 +54,18 @@ Iako je i kada se rabi lokalno riječ o alatu s brojnim mogućnostima, git omogu
 
 Kako bi se mogao koristiti, potrebno je najprije besplatno kreirati račun na [Githubu](www.github.com). 
 
-U ovom trenutku, za probu, pokušajte repozitorij kreiran u prošlom koraku podići na Gitlab u prazan projekt koji ste ondje kreirali. Za pomoć se moguće koristiti [upute](https://www.techrepublic.com/article/how-to-push-a-new-project-to-github/).
+U ovom trenutku, za probu, pokušajte repozitorij kreiran u prošlom koraku podići na Github u prazan projekt koji ste ondje kreirali. Za pomoć se moguće koristiti [upute](https://www.techrepublic.com/article/how-to-push-a-new-project-to-github/).
 
 ## Korištenje projekta
 
-Za rješavanje zadaća napravite _import_ ovog repozitorija [(ovaj koji trenutno gledate, kliknite ovdje na link ako ne znate što sad)](https://github.com/zoricbruno/oop_ferit_zadace). Ovo postižete tako što kreirate novi prazan privatan repozitorij na svom Github računu (nemojte dodavati ni .gitignore , ni readme). Kada ste ga kreirali, idete na _import code_ opciju kako biste inicijalizirali kodom uz drugog projekta. Nalijepite link do repozitorija sa zadaćama. Nakon ovog postupka, VS projekt (*solution*) bi trebao postojati i na Vašem Gitlab računu, ali kao privatan projekt. Tada ga je moguće lokalno klonirati (ili eventualno skinuti kao .zip ili .rar datoteku te započeti s radom, ali pokušajte klonirati). Kada želite spremiti stanje projekta, to radite najprije dodavanjem svih promjena naredbom _add_ i zatim kreiranjem trenutne slike naredbom _commit_. Kada želite podići kod na svoj udaljeni repozitorij, to radite naredbom _push_. 
+Za rješavanje zadaća napravite _import_ ovog repozitorija [(ovaj koji trenutno gledate, kliknite ovdje na link ako ne znate što sad)](https://github.com/zoricbruno/oop_ferit_zadace). Ovo postižete tako što kreirate novi prazan privatan repozitorij na svom Github računu (nemojte dodavati ni .gitignore , ni readme). Kada ste ga kreirali, idete na _import code_ opciju kako biste inicijalizirali kodom uz drugog projekta. Nalijepite link do repozitorija sa zadaćama. Nakon ovog postupka, VS projekt (*solution*) bi trebao postojati i na Vašem Github računu, ali kao privatan projekt. Tada ga je moguće lokalno klonirati (ili eventualno skinuti kao .zip ili .rar datoteku te započeti s radom, ali pokušajte klonirati). Kada želite spremiti stanje projekta, to radite najprije dodavanjem svih promjena naredbom _add_ i zatim kreiranjem trenutne slike naredbom _commit_. Kada želite podići kod na svoj udaljeni repozitorij, to radite naredbom _push_. 
 
 ```
 git push -u origin --all
 ```
-Za slučaj da origin ne postoji, morate dodati link do svog repozitorija (možete ga kopirati s gitlaba, sa stranice projekta) korištenjem naredbi
+Za slučaj da origin ne postoji, morate dodati link do svog repozitorija (možete ga kopirati s githuba, sa stranice projekta) korištenjem naredbi
 ```
-git remote add origin "LINK_KOJI_STE_KOPIRALI (git@gitlab.com:...)"
+git remote add origin "LINK_KOJI_STE_KOPIRALI"
 ```
 i nakon toga napraviti _push_.
 
@@ -75,4 +75,5 @@ Nakon što unesete lozinku , repozitorij će biti uploadan i na udaljenom repozi
 * Projekt koji kreirate na Githubu mora biti privatan. Javni projekti (repozitoriji) neće biti uvaženi. 
 * Link na repozitorij zalijepit ćete na odgovarajuće mjesto na Merlin stranici kolegija.
 * Nakon isteka roka za predaju zadaće repozitorij ćete prebaciti na javan način pristupa kako bi isti mogao biti ocijenjen.
+* Arhivske datoteke postavljene izravno na Github neće biti razmatrane, nemojte arhivirati kod i postavljati ga tako.
 
