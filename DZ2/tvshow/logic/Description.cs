@@ -8,12 +8,17 @@ namespace logic
 {
     public class Description
     {
-        private int episodeNumber = 1;
-        private TimeSpan episodeLength = TimeSpan.FromMinutes(60);
-        private string episodeTitle = "";
+        private int episodeNumber;
+        private TimeSpan episodeLength;
+        private string episodeTitle;
 
 
-        public Description() { }
+        public Description() 
+        {
+            episodeNumber = 1;
+            episodeLength = TimeSpan.FromMinutes(60);
+            episodeTitle = "Title";
+        }
 
         public Description(int episodeNumber, TimeSpan episodeLength, string episodeTitle)
         {
@@ -21,7 +26,5 @@ namespace logic
             this.episodeLength = episodeLength;
             this.episodeTitle = episodeTitle;
         }
-
-
     }
 }
