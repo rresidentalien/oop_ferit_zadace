@@ -8,11 +8,16 @@ namespace logic
 {
     public class Episode
     {
-        private int viewerCount = 0;
-        private double sumOfScores = 0.0;
-        private double highestScore = 0.0;
+        private int viewerCount;
+        private double sumOfScores;
+        private double highestScore;
 
-        public Episode() { }
+        public Episode() 
+        {
+            viewerCount = 0;
+            sumOfScores = 0.0;
+            highestScore = 0.0;
+        }
 
         public Episode(int viewerCount, double sumOfScores, double highestScore)
         {
@@ -33,7 +38,11 @@ namespace logic
 
         public double GetAverageScore()
         {
-            return sumOfScores / viewerCount;
+            if (viewerCount > 0)
+            {
+                return sumOfScores / viewerCount;
+            }
+            return 0;
         }
 
         public void AddView(double score)
