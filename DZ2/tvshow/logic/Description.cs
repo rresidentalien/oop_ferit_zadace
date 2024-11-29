@@ -13,7 +13,7 @@ namespace logic
         private string episodeTitle;
 
 
-        public Description() 
+        public Description()
         {
             episodeNumber = 1;
             episodeLength = TimeSpan.FromMinutes(60);
@@ -25,6 +25,11 @@ namespace logic
             this.episodeNumber = episodeNumber;
             this.episodeLength = episodeLength;
             this.episodeTitle = episodeTitle;
+        }
+
+        public override string ToString()
+        {
+            return $"{episodeNumber},{episodeLength},{episodeTitle}";
         }
     }
 }
