@@ -11,19 +11,22 @@ namespace logic
         private int viewerCount;
         private double sumOfScores;
         private double highestScore;
+        private Description description;
 
-        public Episode() 
+        public Episode()
         {
             viewerCount = 0;
             sumOfScores = 0.0;
             highestScore = 0.0;
+            description = new Description();
         }
 
-        public Episode(int viewerCount, double sumOfScores, double highestScore)
+        public Episode(int viewerCount, double sumOfScores, double highestScore, Description description)
         {
             this.viewerCount = viewerCount;
             this.sumOfScores = sumOfScores;
             this.highestScore = highestScore;
+            this.description = description;
         }
 
         public double GetMaxScore()
@@ -53,6 +56,21 @@ namespace logic
             {
                 highestScore = score;
             }
+        }
+
+        public static bool operator> (Episode episode1, Episode episode2)
+        {
+            return episode1.GetAverageScore() > episode2.GetAverageScore();
+        }
+
+        public static bool operator< (Episode episode1, Episode episode2)
+        {
+            return episode1.GetAverageScore() < episode2.GetAverageScore();
+        }
+
+        public override string ToString()
+        {
+            return $"{viewerCount},{sumOfScores},{highestScore}," + description.ToString();
         }
     }
 }
