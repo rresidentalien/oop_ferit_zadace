@@ -13,11 +13,8 @@ namespace logic
         private string episodeTitle;
 
 
-        public Description()
+        public Description() : this(1, TimeSpan.FromMinutes(0), "Default Title")
         {
-            episodeNumber = 1;
-            episodeLength = TimeSpan.FromMinutes(60);
-            episodeTitle = "Title";
         }
 
         public Description(int episodeNumber, TimeSpan episodeLength, string episodeTitle)

@@ -13,12 +13,8 @@ namespace logic
         private double highestScore;
         private Description description;
 
-        public Episode()
+        public Episode() : this(0, 0.0, 0.0, new Description())
         {
-            viewerCount = 0;
-            sumOfScores = 0.0;
-            highestScore = 0.0;
-            description = new Description();
         }
 
         public Episode(int viewerCount, double sumOfScores, double highestScore, Description description)
