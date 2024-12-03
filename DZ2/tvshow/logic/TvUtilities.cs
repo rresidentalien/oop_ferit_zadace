@@ -11,7 +11,6 @@ namespace logic
     {
         private static Random random = new Random();
 
-
         public static double GenerateRandomScore()
         {
             return (double)(random.NextDouble() * 10.0);
