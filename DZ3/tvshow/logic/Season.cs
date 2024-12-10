@@ -61,20 +61,20 @@ namespace logic
         public override string ToString()
         {
             string returnString = "";
-            
-            returnString.Concat($"Season {seasonNumber}");
-            returnString.Concat("\n=================================================\n");
-            foreach(var episode in episodes)
+
+            returnString += $"Season {seasonNumber}:";
+            returnString += "\n=================================================\n";
+            foreach (var episode in episodes)
             {
-                returnString.Concat(episode.ToString());
-                returnString.Concat("\n");
+                returnString += episode.ToString();
+                returnString += "\n";
             }
-            returnString.Concat("Report:\n");
-            returnString.Concat("\n=================================================\n");
-            returnString.Concat($"");
-            returnString.Concat($"Total viewers: {GetTotalViewers()}\n");
-            returnString.Concat($"Total duration: {GetTotalTime()}");
-            returnString.Concat("\n=================================================\n");
+            returnString += "Report:";
+            returnString += "\n=================================================\n";
+            returnString += $"";
+            returnString += $"Total viewers: {GetTotalViewers()}\n";
+            returnString += $"Total duration: {GetTotalTime()}";
+            returnString += "\n=================================================\n";
 
             return returnString;
         }
