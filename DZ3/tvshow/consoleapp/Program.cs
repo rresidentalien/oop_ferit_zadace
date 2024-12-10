@@ -15,11 +15,11 @@ namespace consoleapp
             IPrinter printer = new ConsolePrinter();
             printer.Print($"Reading data from file {fileName}");
 
-            printer.Print($"Good season? Total viewers: {season.GetTotalViewers()}");
-            printer.Print($"Watch whole season? Ends at: {season.GetBingeEnd()}");
-
             Episode[] episodes = TvUtilities.LoadEpisodesFromFile(fileName);
             Season season = new Season(1, episodes);
+
+            printer.Print($"Good season? Total viewers: {season.GetTotalViewers()}");
+            printer.Print($"Watch whole season? Ends at: {season.GetBingeEnd()}");
 
             printer.Print(season.ToString());
             for (int i = 0; i < season.Length; i++)

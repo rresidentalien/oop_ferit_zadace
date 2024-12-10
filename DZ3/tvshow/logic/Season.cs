@@ -10,6 +10,7 @@ namespace logic
     {
         private Episode[] episodes;
         private int seasonNumber;
+        public int Length { get => episodes.Length; }
 
         public Season(int seasonNumber, Episode[] episodes)
         {
@@ -34,6 +35,17 @@ namespace logic
             return totalViewers;
         }
 
+        public TimeSpan GetTotalTime()
+        {
+            TimeSpan totalTime = TimeSpan.FromSeconds(0);
+            foreach(var episode in episodes)
+            {
+                totalTime += episode.GetEpisodeLength();
+            }
+
+            return totalTime;
+        }
+
         public DateTime GetBingeEnd()
         {
             DateTime endTime = DateTime.Now;
@@ -48,7 +60,23 @@ namespace logic
 
         public override string ToString()
         {
-            return base.ToString();
+            string returnString = "";
+            
+            returnString.Concat($"Season {seasonNumber}");
+            returnString.Concat("\n=================================================\n");
+            foreach(var episode in episodes)
+            {
+                returnString.Concat(episode.ToString());
+                returnString.Concat("\n");
+            }
+            returnString.Concat("Report:\n");
+            returnString.Concat("\n=================================================\n");
+            returnString.Concat($"");
+            returnString.Concat($"Total viewers: {GetTotalViewers()}\n");
+            returnString.Concat($"Total duration: {GetTotalTime()}");
+            returnString.Concat("\n=================================================\n");
+
+            return returnString;
         }
     }
 }
