@@ -71,7 +71,7 @@ namespace logic
 
         public override string ToString()
         {
-            return $"{viewerCount},{sumOfScores},{highestScore}," + description.ToString();
+            return $"{viewerCount},{Math.Round(sumOfScores, 4)},{Math.Round(highestScore, 2)}," + description.ToString();
         }
     }
 }

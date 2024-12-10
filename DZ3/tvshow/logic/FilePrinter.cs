@@ -17,12 +17,10 @@ namespace logic
 
         public void Print(string message)
         {
-            using (StreamWriter outputFile = new StreamWriter(Path.Combine(outputFileName, "WriteLines.txt")))
+            using (StreamWriter outputFile = new StreamWriter(outputFileName))
             {
                 outputFile.WriteLine(message);
             }
         }
-
-
     }
 }
