@@ -48,14 +48,7 @@ namespace logic
 
         public DateTime GetBingeEnd()
         {
-            DateTime endTime = DateTime.Now;
-
-            foreach(var episode in episodes)
-            {
-                endTime += episode.GetEpisodeLength();
-            }
-
-            return endTime;
+            return DateTime.Now + GetTotalTime();
         }
 
         public override string ToString()
