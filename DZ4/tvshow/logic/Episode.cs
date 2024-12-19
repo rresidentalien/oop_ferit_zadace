@@ -17,6 +17,14 @@ namespace logic
         {
         }
 
+        public Episode(Episode other)
+        {
+            this.viewerCount = other.viewerCount;
+            this.sumOfScores = other.sumOfScores;
+            this.highestScore = other.highestScore;
+            this.description = new Description(other.description);
+        }
+
         public Episode(int viewerCount, double sumOfScores, double highestScore, Description description)
         {
             this.viewerCount = viewerCount;

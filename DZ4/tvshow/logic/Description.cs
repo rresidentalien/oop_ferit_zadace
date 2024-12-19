@@ -24,6 +24,13 @@ namespace logic
             this.episodeTitle = episodeTitle;
         }
 
+        public Description(Description other)
+        {
+            this.episodeNumber = other.episodeNumber;
+            this.episodeLength = other.episodeLength;
+            this.episodeTitle = other.episodeTitle;
+        }
+
         public TimeSpan EpisodeLength { get => episodeLength; }
 
         public override string ToString()
