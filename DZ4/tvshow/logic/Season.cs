@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics.Metrics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,7 +12,6 @@ namespace logic
     {
         private List<Episode> episodes;
         private int seasonNumber;
-        public int Count { get => episodes.Count; }
 
         public Season(int seasonNumber, List<Episode> episodes)
         {
@@ -19,10 +19,20 @@ namespace logic
             this.episodes = episodes;
         }
 
-        public Episode this[int i]
+        public Season(Season other)
         {
-            get => episodes[i];
-            set => episodes[i] = value;
+            this.seasonNumber = other.seasonNumber;
+            this.episodes = new List<Episode>();
+            foreach (var episode in other.episodes)
+            {
+                this.episodes.Add(new Episode(episode));
+            }
+        }
+
+        public Episode this[int index]
+        {
+            get => episodes[index];
+            set => episodes[index] = value;
         }
 
         public int GetTotalViewers()
@@ -39,7 +49,7 @@ namespace logic
         public TimeSpan GetTotalTime()
         {
             TimeSpan totalTime = TimeSpan.FromSeconds(0);
-            foreach(var episode in episodes)
+            foreach (var episode in episodes)
             {
                 totalTime += episode.GetEpisodeLength();
             }
@@ -65,7 +75,6 @@ namespace logic
             }
             returnString += "Report:";
             returnString += "\n=================================================\n";
-            returnString += $"";
             returnString += $"Total viewers: {GetTotalViewers()}\n";
             returnString += $"Total duration: {GetTotalTime()}";
             returnString += "\n=================================================\n";
@@ -75,12 +84,25 @@ namespace logic
 
         public IEnumerator<Episode> GetEnumerator()
         {
-            return episodes.GetEnumerator();
+            foreach (var episode in episodes)
+            {
+                yield return episode;
+            }
         }
 
         IEnumerator IEnumerable.GetEnumerator()
         {
             return GetEnumerator();
+        }
+
+        public void Remove(string episodeName)
+        {
+            var episode = episodes.FirstOrDefault(e => e.ToString().Contains(episodeName));
+            if (episode == null)
+            {
+                throw new TvException($"No such episode found.", episodeName);
+            }
+            episodes.Remove(episode);
         }
     }
 }

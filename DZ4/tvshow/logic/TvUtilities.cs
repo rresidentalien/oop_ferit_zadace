@@ -39,9 +39,9 @@ namespace logic
         {
             string[] episodesInputs = File.ReadAllLines(fileName);
             List<Episode> episodes = new List<Episode>();
-            for (int i = 0; i < episodes.Count; i++)
+            for (int i = 0; i < episodesInputs.Length; i++)
             {
-                episodes[i] = Parse(episodesInputs[i]);
+                episodes.Add(Parse(episodesInputs[i]));
             }
 
             return episodes;
