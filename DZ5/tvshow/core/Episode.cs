@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
+﻿using System.Text.RegularExpressions;
 
 namespace core
 {
@@ -11,7 +6,7 @@ namespace core
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public int? Number { get; set; } //epizode tipa insignificant_special nemaju broj i null vrijednost inace baca exception
+        public int? Number { get; set; } //epizode tipa insignificant_special nemaju broj i null vrijednost inace baca exception, npr got s8, derry girls s3
         public int Runtime { get; set; }
         public string Summary { get; set; }
 
