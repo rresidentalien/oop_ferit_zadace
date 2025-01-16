@@ -11,7 +11,7 @@ namespace core
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public int Number { get; set; }
+        public int? Number { get; set; } //epizode tipa insignificant_special nemaju broj i null vrijednost inace baca exception
         public int Runtime { get; set; }
         public string Summary { get; set; }
 
